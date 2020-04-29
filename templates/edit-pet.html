@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}Add a Pet{% endblock %}
+{% block title %}Pet Details{% endblock %}
 {% block content %}
-    <h1>Add a Pet</h1>
-    <form action="/add" method="POST">
+    <h1>Pet Details</h1>
+    <img src="{{ pet.photo_url }}" alt="">
+    <h2>Name: {{ pet.name }}</h2>
+    <p>Species: {{ pet.species }}</p>
+    <p>Age: {{ pet.age }}</p>
+    <form action="/{{ pet.id }}" method="POST">
         {{ form.hidden_tag() }}
         {% for field in form if field.widget.input_type != 'hidden' %}
             <p>
@@ -16,6 +20,6 @@
             </p>
         {% endfor %}
         <a class="btn btn-warning" href="/">Cancel</a>
-        <button class="btn btn-info">Add</button>
+        <button class="btn btn-info">Save</button>
     </form>
 {% endblock %}

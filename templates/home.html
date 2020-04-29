@@ -7,12 +7,14 @@
         <p class="message alert alert-success">{{ msg }}</p>
     {% endfor %}
     <div class="container">
-        {% for pet in pets %}
+        <div class="row">
+            {% for pet in pets %}
             <div class="col-3">
                 <img src="{{pet.photo_url}}" alt="">
-                <p><a href="/pets/{{ pet.id }}">{{ pet.name }}</a> {% if pet.available %}<strong>is available!</strong>{% endif %}</p>
+                <p><a href="/{{ pet.id }}">{{ pet.name }}</a> {% if pet.available %}<strong>is available!</strong>{% endif %}</p>
             </div>
-        {% endfor %}
+            {% endfor %}
+        </div>
     </div>
     <a class="btn btn-primary" href="/add">Add a Pet</a>
 {% endblock %}

@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Add a Pet{% endblock %}
+{% block content %}
+    <h1>Add a Pet</h1>
+    <form action="/add" method="POST">
+        {% for field in form if field.widget.input_type != 'hidden' %}
+            <p>
+                {{ field.label }}
+                {{ field }}
+
+                {% for error in field.errors %}
+                    {{ error }}
+                {% endfor %}
+            </p>
+        {% endfor %}
+        <a class="btn btn-warning" href="/">Cancel</a>
+        <button class="btn btn-info">Add</button>
+    </form>
+{% endblock %}

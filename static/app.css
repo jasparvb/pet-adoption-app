@@ -1,0 +1,22 @@
+html {
+    margin: 30px;
+    font-size: 30px;
+}
+
+body {
+    margin: 30px;
+}
+
+label {
+    margin-right: .5rem;
+}
+
+img {
+    float: left;
+    width: 200px;
+    margin-right: 20px;
+}
+
+.message {
+    font-weight: 700;
+}
